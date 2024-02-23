@@ -1,0 +1,36 @@
+.location {
+  position: relative;
+  opacity: 0.8;
+  &::before {
+    content: url("../img/general/marker.svg");
+    position: absolute;
+    top: -5px;
+    left: 35px;
+  }
+}
+.title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.rating {
+  position: relative;
+  &::before {
+    content: url("../img/general/star.svg");
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: -23px;
+    top: -2px;
+  }
+}
+.heart-button {
+  background: rgba(255, 255, 255, 0.3) url("../img/general/heart.svg") no-repeat;
+  width: 46px;
+  height: 46px;
+  background-position: center center;
+  border-radius: 50%;
+  backdrop-filter: blur(15px);
+}
+.heart-img {
+  display: inline;
+}

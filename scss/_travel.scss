@@ -1,0 +1,48 @@
+.travel {
+  &__card {
+    display: grid;
+    grid-template-columns: 138px 2fr 1fr;
+    grid-template-rows: 39.5px 39.5px;
+    gap: 13px 18px;
+    margin: 0 0 61px 0;
+  }
+
+  &__img-container {
+    -webkit-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    -moz-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    border-radius: 15px;
+    overflow: hidden;
+    grid-row: span 2;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__link {
+    color: $maintextcolor;
+    font-size: 22px;
+    align-self: end;
+    transition: 0.3s;
+    &:hover {
+      color: $maintextcolorhover;
+    }
+  }
+
+  &__location {
+    margin: 0 0 0 26px;
+    &::before {
+      left: -26px;
+    }
+  }
+  &__heart-button {
+    align-self: center;
+    justify-self: end;
+    grid-row: span 2;
+  }
+}

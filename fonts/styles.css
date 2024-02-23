@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Baloo2-SemiBold';
+  src: url(./Baloo2-SemiBold.eot);
+  src: url(./Baloo2-SemiBold.eot?#iefix) format('embedded-opentype'),
+       url(./Baloo2-SemiBold.svg#Baloo2-SemiBold) format('svg'),
+       url(./Baloo2-SemiBold.ttf) format('truetype'),
+       url(./Baloo2-SemiBold.woff2) format('woff2');
+}

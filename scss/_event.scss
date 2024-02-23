@@ -1,0 +1,125 @@
+.event {
+  & > *:first-child {
+    margin: 0 0 57px 0;
+  }
+  &__title {
+    display: inline-block;
+  }
+
+  &__date {
+    padding: 12px 31px;
+    border: 1px solid #b4bcc4;
+    border-radius: 24px;
+  }
+
+  &__flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px 10px;
+    width: 100%;
+    &_second {
+      justify-content: start;
+      margin: 0 0 43px -18px;
+      flex-wrap: wrap;
+      @media (max-width: 774px) {
+        margin: 0 0 43px 0;
+      }
+      @media (max-width: 529px) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__button {
+    transition: 0.3s;
+    background: transparent;
+    padding: 18px 23px;
+    border-radius: 32px;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid gray;
+    }
+  }
+
+  &__day {
+    position: relative;
+    font-size: 16px;
+    text-align: left;
+    display: block;
+    color: $maintextcolor;
+    margin: 0 0 11px 0;
+  }
+
+  &__number {
+    display: block;
+    font-size: 25px;
+    color: $maintextcolor;
+    font-weight: 500;
+  }
+
+  &__grid-container {
+    display: grid;
+    grid-template-columns: 3fr repeat(2, 1fr);
+    grid-template-rows: 119px;
+    gap: 0 45px;
+    @media (max-width: 705px) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 119px 119px;
+      gap: 25px 35px;
+    }
+  }
+
+  &__player {
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 23px;
+    background: rgb(24, 51, 62);
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px 30px;
+    -webkit-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    -moz-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    @media (max-width: 705px) {
+      grid-column: span 2;
+    }
+  }
+
+  &__img-container {
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    -moz-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    &_mini {
+      grid-row: span 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__music-name {
+    align-self: end;
+  }
+
+  &__rating {
+    margin: 0 0 0 18px;
+  }
+
+  &__play-stop {
+    grid-row: span 2;
+    border-radius: 13.5px;
+    background: rgb(249, 212, 74);
+    padding: 18px 10px;
+    align-self: center;
+    justify-self: end;
+  }
+}

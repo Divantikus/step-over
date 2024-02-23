@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Mountain</title>
+  </head>
+  <body class="dark">
+    <header class="header">
+      <div class="header__container container">
+        <nav class="header__nav-bar nav-bar">
+          <button class="nav-bar__logo-link">
+            <img
+              src="img/header/logo.svg"
+              alt="logo-icon"
+              class="nav-bar__logo-img"
+            />
+          </button>
+          <form class="nav-bar__form">
+            <div class="nav-bar__input-container">
+              <input class="nav-bar__input" placeholder="Search for places" />
+            </div>
+            <button class="nav-bar__theme-button" type="button">
+              <img src="img/general/sun.svg" alt="sun" class="nav-bar__img" />
+            </button>
+          </form>
+          <div class="nav-bar__profile-container">
+            <p class="nav-bar__location location">New York/ Dc</p>
+            <button class="nav-bar__notifications-button">
+              <img src="img/header/not.svg" alt="icon" />
+            </button>
+            <button class="nav-bar__profile-button">
+              <img
+                src="img/header/profile-photo.png"
+                alt="icon"
+                class="nav-bar__img"
+              />
+            </button>
+          </div>
+          <button class="nav-bar__button-all">
+            <img
+              src="img/header/profile-photo.png"
+              alt="icon"
+              class="nav-bar__img"
+            />
+          </button>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <div class="wrapper">
+        <aside class="left-side">
+          <nav class="left-side__nav">
+            <ul class="left-side__menu">
+              <li class="left-side__item">
+                <button
+                  class="left-side__button active-point"
+                  data-decnumber="dec1"
+                >
+                  Dashboard
+                  <img
+                    src="img/left-side/home.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element activ-decorative-element"
+                  id="dec1"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec2">
+                  Note’s<img
+                    src="img/left-side/notes.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec2"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec3">
+                  Theme<img
+                    src="img/left-side/moon.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec3"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec4">
+                  Account<img
+                    src="img/left-side/account-icon.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec4"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec5">
+                  Explore<img
+                    src="img/left-side/explore.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec5"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec6">
+                  Graph<img
+                    src="img/left-side/graph.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec6"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec7">
+                  Messages<img
+                    src="img/left-side/massege.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec7"
+                ></div>
+              </li>
+              <li class="left-side__item">
+                <button class="left-side__button" data-decnumber="dec8">
+                  Setting<img
+                    src="img/left-side/settings.svg"
+                    alt="icon"
+                    class="left-side__icon"
+                  />
+                </button>
+                <div
+                  class="left-side__decorative-element decorative-element"
+                  id="dec8"
+                ></div>
+              </li>
+            </ul>
+            <button class="left-side__button left-side__button_exit">
+              Sign Out<img
+                src="img/left-side/exit.svg"
+                alt="icon"
+                class="left-side__icon"
+              />
+            </button>
+          </nav>
+        </aside>
+        <main class="main">
+          <section class="main__world world">
+            <h1 class="world__title title">Discover World</h1>
+            <div class="world__scroll-wrapper">
+              <button class="world__button">Recommended</button>
+              <button class="world__button">Popular Places</button>
+              <button class="world__button">Trip’s</button>
+            </div>
+            <div class="world__flex-container">
+              <div class="world__column">
+                <div class="world__card">
+                  <div class="world__img-container">
+                    <img src="img/world/01.jpg" alt="" class="world__img" />
+                    <button class="world__heart-button heart-button"></button>
+                  </div>
+                  <h3 class="world__sub-title">Moonlight Night</h3>
+                  <div class="world__location-rating">
+                    <p class="world__location location">Canada</p>
+                    <p class="rating">4.7</p>
+                  </div>
+                </div>
+              </div>
+              <div class="world__column">
+                <div class="world__card">
+                  <div class="world__img-container">
+                    <img
+                      src="img/world/02.jpg"
+                      alt=""
+                      class="world__img world__img_second"
+                    />
+                    <button class="world__heart-button heart-button"></button>
+                  </div>
+                  <h3 class="world__sub-title">Sahara Desert</h3>
+                  <div class="world__location-rating">
+                    <p class="world__location location">Africa</p>
+                    <p class="rating">4.9</p>
+                  </div>
+                </div>
+              </div>
+              <div class="world__column">
+                <div class="world__card">
+                  <div class="world__img-container">
+                    <img
+                      src="img/world/03.jpg"
+                      alt=""
+                      class="world__img world__img_third"
+                    />
+                    <button class="world__heart-button heart-button"></button>
+                  </div>
+                  <h3 class="world__sub-title">Night Camping</h3>
+                  <div class="world__location-rating">
+                    <p class="world__location location">New York</p>
+                    <p class="rating">5.0</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="main__event event">
+            <div class="event__flex-container">
+              <h2 class="event__title title">Event Dates</h2>
+              <time datetime="2022-1-15" class="event__date"
+                >January 15-2022</time
+              >
+            </div>
+            <div class="event__flex-container event__flex-container_second">
+              <button class="event__button active-button">
+                <span class="event__day">Mo</span>
+                <span class="event__number">12</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Tu</span>
+                <span class="event__number">13</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">We</span>
+                <span class="event__number">14</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Th</span>
+                <span class="event__number">15</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Fr</span>
+                <span class="event__number">16</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">St</span>
+                <span class="event__number">17</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Su</span>
+                <span class="event__number">18</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Mo</span>
+                <span class="event__number">19</span>
+              </button>
+              <button class="event__button">
+                <span class="event__day">Tu</span>
+                <span class="event__number">20</span>
+              </button>
+            </div>
+            <div class="event__grid-container">
+              <div class="event__player">
+                <div class="event__img-container event__img-container_mini">
+                  <img
+                    src="img/event/mount.jpg"
+                    alt="photo"
+                    class="event__img"
+                  />
+                </div>
+                <p class="event__music-name">Hitchhiking</p>
+                <button class="event__play-stop">| |</button>
+                <p class="event__rating rating">5.0</p>
+              </div>
+              <div class="event__img-container">
+                <img
+                  src="img/event/safari.jpg"
+                  alt="photo"
+                  class="event__img"
+                />
+              </div>
+              <div class="event__img-container">
+                <img
+                  src="img/event/people.jpg"
+                  alt="photo"
+                  class="event__img"
+                />
+              </div>
+            </div>
+          </section>
+        </main>
+        <aside class="right-side">
+          <div class="right-side__card">
+            <div
+              class="right-side__img-container right-side__img-container_big"
+            >
+              <img
+                alt="active-img"
+                src="img/right-side/green-moun.jpg"
+                class="right-side__img right-side__img_big"
+              />
+              <button class="right-side__heart-button heart-button"></button>
+              <div class="right-side__button-container">
+                <button
+                  class="right-side__img-button"
+                  data-imgnumber="img/right-side/big-01.jpg"
+                  data-funcnumber="1"
+                >
+                  <img
+                    src="img/right-side/01.jpg"
+                    alt="picture"
+                    class="right-side__img"
+                  />
+                </button>
+                <button
+                  class="right-side__img-button"
+                  data-imgnumber="img/right-side/big-02.jpg"
+                  data-funcnumber="2"
+                >
+                  <img
+                    src="img/right-side/02.jpg"
+                    alt="picture"
+                    class="right-side__img"
+                  />
+                </button>
+                <button
+                  class="right-side__img-button"
+                  data-imgnumber="img/right-side/big-03.webp"
+                  data-funcnumber="3"
+                >
+                  <img
+                    src="img/right-side/03.jpg"
+                    alt="picture"
+                    class="right-side__img"
+                  />
+                </button>
+                <button
+                  class="right-side__img-button"
+                  data-imgnumber="img/right-side/big-04.jpg"
+                  data-funcnumber="4"
+                >
+                  <img
+                    src="img/right-side/04.jpg"
+                    alt="picture"
+                    class="right-side__img"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="right-side__text-container">
+              <h2 class="right-side__title title">Brazil Forest</h2>
+              <p class="right-side__text">
+                I spend ten minutes or so doing a couple of Duolingo lessons in
+                French so
+              </p>
+            </div>
+            <div class="right-side__prise-container">
+              <div class="right-side__price">
+                <p class="right-side__paragraph">per/person</p>
+                <p class="right-side__number">$1540</p>
+              </div>
+              <a href="#" class="right-side__link">Book Travel</a>
+            </div>
+          </div>
+          <div class="travel">
+            <div class="travel__card">
+              <div class="travel__img-container">
+                <img src="img/right-side/sea.jpg" alt="" class="travel__img" />
+              </div>
+              <a href="#" class="travel__link">Nature Lake</a>
+              <button class="travel__heart-button heart-button"></button>
+              <p class="travel__location location">Afghanistan</p>
+            </div>
+            <div class="travel__card">
+              <div class="travel__img-container">
+                <img
+                  src="img/right-side/desert.jpg"
+                  alt=""
+                  class="travel__img"
+                />
+              </div>
+              <a href="#" class="travel__link">Camel Ride</a>
+              <button class="travel__heart-button heart-button"></button>
+              <p class="travel__location location">Srilanka</p>
+            </div>
+            <div class="travel__card">
+              <div class="travel__img-container">
+                <img
+                  src="img/right-side/forest.jpg"
+                  alt=""
+                  class="travel__img"
+                />
+              </div>
+              <a href="#" class="travel__link">Mid Forest</a>
+              <button class="travel__heart-button heart-button"></button>
+              <p class="travel__location location">Brazil</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+.world {
+  margin: 0 0 64px 0;
+
+  &__title {
+    margin: 0 0 30px 0;
+  }
+
+  &__scroll-wrapper {
+    max-width: 350px;
+    display: flex;
+    flex-wrap: nowrap;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & > * {
+      margin: 0 30px 0 0;
+    }
+    margin: 0 0 37px 0;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    color: $maintextcolor;
+    transition: 0.3s;
+    background: transparent;
+    &:hover {
+      color: $maintextcolorhover;
+    }
+  }
+
+  &__flex-container {
+    display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+    width: calc(100% - 1px);
+    margin: 0 auto;
+
+    @media (max-width: 893px) {
+      gap: 30px 0;
+    }
+  }
+
+  &__column {
+    flex: 33.333%;
+    padding: 0 15px;
+    transition: 0.3s;
+    &:hover {
+      transform: translateY(-10px);
+    }
+    @media (max-width: 893px) {
+      flex: 0 1 50%;
+    }
+    @media (max-width: 550px) {
+      flex: 0 1 100%;
+      padding: 0;
+    }
+  }
+
+  &__card {
+    @media (max-width: 969px) {
+      text-align: center;
+    }
+  }
+
+  &__img-container {
+    text-align: right;
+    max-width: 241px;
+    min-height: 322px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    margin: 0 0 21px 0;
+    padding: 25px;
+    -webkit-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    -moz-box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    box-shadow: 0px 5px 46px 5px rgba(34, 60, 80, 0.4);
+    @media (max-width: 969px) {
+      margin: 0 auto 21px auto;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    position: absolute;
+    left: -130px;
+    top: 0;
+    object-position: center;
+    &_second {
+      left: -50px;
+    }
+    &_third {
+      left: -200px;
+    }
+  }
+
+  &__sub-title {
+    font-size: 22px;
+    line-height: 35px;
+    margin: 0 0 16px 0;
+  }
+  &__location-rating {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1235px) {
+      justify-content: stretch;
+      gap: 50px;
+    }
+    @media (max-width: 969px) {
+      display: inline-flex;
+    }
+  }
+  &__location {
+    padding: 0 0 0 29px;
+    &::before {
+      left: 0;
+    }
+  }
+}
