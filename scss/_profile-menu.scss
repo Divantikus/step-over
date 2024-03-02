@@ -1,0 +1,45 @@
+.profile-menu {
+  top: 100px;
+  left: 70%;
+  position: absolute;
+  width: 250px;
+  border-radius: 20px;
+  background: #fff;
+  @media (max-width: 849px) {
+    left: 60%;
+  }
+  @media (max-width: 632px) {
+    left: 50%;
+  }
+  @media (max-width: 509px) {
+    left: 40%;
+  }
+  @media (max-width: 427px) {
+    left: 25%;
+  }
+  &__container {
+    padding: 10px;
+  }
+
+  &__link {
+    color: $maintextcolor;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    margin: 0 0 10px 0;
+    &:focus {
+      display: block;
+    }
+    &:active {
+      display: block;
+    }
+  }
+
+  &__theme-button {
+    width: 100%;
+    background: transparent;
+    color: $maintextcolor;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

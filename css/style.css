@@ -152,6 +152,7 @@ h6 {
 }
 
 .nav-bar {
+  position: relative;
   padding: 20px 0 0 0;
   display: flex;
   -moz-column-gap: 75px;
@@ -271,6 +272,7 @@ h6 {
   border-radius: 50%;
 }
 .nav-bar__button-all {
+  position: relative;
   color: rgb(24, 51, 62);
   display: none;
   width: 56px;
@@ -312,6 +314,58 @@ h6 {
 }
 .burger:focus {
   color: rgb(0, 137, 190);
+}
+
+.profile-menu {
+  top: 100px;
+  left: 70%;
+  position: absolute;
+  width: 250px;
+  border-radius: 20px;
+  background: #fff;
+}
+@media (max-width: 849px) {
+  .profile-menu {
+    left: 60%;
+  }
+}
+@media (max-width: 632px) {
+  .profile-menu {
+    left: 50%;
+  }
+}
+@media (max-width: 509px) {
+  .profile-menu {
+    left: 40%;
+  }
+}
+@media (max-width: 427px) {
+  .profile-menu {
+    left: 25%;
+  }
+}
+.profile-menu__container {
+  padding: 10px;
+}
+.profile-menu__link {
+  color: rgb(24, 51, 62);
+  display: block;
+  transition: 0.3s;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+.profile-menu__link:focus {
+  display: block;
+}
+.profile-menu__link:active {
+  display: block;
+}
+.profile-menu__theme-button {
+  width: 100%;
+  background: transparent;
+  color: rgb(24, 51, 62);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 @media (max-width: 969px) {

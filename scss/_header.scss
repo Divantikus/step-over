@@ -5,6 +5,7 @@
 }
 
 .nav-bar {
+  position: relative;
   padding: 20px 0 0 0;
   display: flex;
   column-gap: 75px;
@@ -113,6 +114,7 @@
   }
 
   &__button-all {
+    position: relative;
     color: $maintextcolor;
     display: none;
     width: 56px;

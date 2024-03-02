@@ -1,6 +1,7 @@
 "use strict";
 
 const buttons = document.querySelectorAll(".left-side__button"),
+  profileButton = document.getElementById("menu"),
   burgerButton = document.querySelector(".nav-bar__logo-link"),
   eventButtons = document.querySelectorAll(".event__button"),
   pictureButtons = document.querySelectorAll(".right-side__img-button"),
@@ -10,16 +11,26 @@ const buttons = document.querySelectorAll(".left-side__button"),
   decorativeElements = document.querySelectorAll(
     ".left-side__decorative-element"
   ),
-  themeButton = document.querySelector(".nav-bar__theme-button"),
+  themeButton = document.querySelector(".theme-button"),
   allButtons = document.querySelectorAll("button"),
-  allSpan = document.querySelectorAll("span");
+  allSpan = document.querySelectorAll("span"),
+  body = document.querySelector("body");
 
 let windowSize = document.documentElement.clientWidth,
   otherLinks = document.querySelectorAll(".travel__link"),
   burgerMenu,
+  menuContainer,
+  themeClass,
+  themeClass2 = "",
+  themeText = "Dark theme",
   menuFlag = false,
-  themeFlag = false;
+  themeFlag = false,
+  profileFlag = "on";
+//---------------------------------------- check
+menuContainer = document.createElement("div");
+menuContainer.className = "profile-menu";
 
+//--------------------------------------------- АНИМАЦИИ САЙДБАРА
 function fuck() {
   buttons.forEach(function (elementsCleare) {
     elementsCleare.classList.remove("active-point");
@@ -32,7 +43,11 @@ function fuck() {
     .getElementById(`${this.dataset.decnumber}`)
     .classList.add("activ-decorative-element");
 }
-
+//--------------------------------------------- НАЖАТИЕ САЙДБАР
+buttons.forEach(function (element) {
+  element.addEventListener("click", fuck);
+});
+//--------------------------------------------- СМЕНА ТЕКСТА
 function changingTextFunc(number) {
   windowSize = document.documentElement.clientWidth;
   if (number == 1) {
@@ -64,7 +79,7 @@ function changingTextFunc(number) {
     changingText.classList.remove("scroll-on");
   }
 }
-
+//--------------------------------------------- БУРГЕР МЕНЮ
 burgerButton.onclick = function () {
   windowSize = document.documentElement.clientWidth;
   if (windowSize <= 968 && !menuFlag) {
@@ -111,8 +126,8 @@ burgerButton.onclick = function () {
     menuFlag = !menuFlag;
   }
 };
-
-themeButton.onclick = function () {
+//--------------------------------------------- СМЕНА ТЕМЫ
+function themeFunc() {
   if (!themeFlag) {
     themeButton.style.background = "#fff";
     document.querySelector(".nav-bar__img").src = "img/general/moon.svg";
@@ -142,11 +157,22 @@ themeButton.onclick = function () {
     });
     themeFlag = !themeFlag;
   }
-};
+  if (themeFlag) {
+    themeText = "Light theme";
+    themeClass = "dark-them";
+    themeClass2 = "dark-them-color";
+  } else {
+    themeText = "Dark theme";
+    themeClass = "";
+    themeClass2 = "";
+  }
+  if (document.querySelector(".profile-menu__theme-button") != undefined) {
+    this.textContent = `${themeText}`;
+    document.querySelector(".profile-menu").remove();
+  }
+}
 
-buttons.forEach(function (element) {
-  element.addEventListener("click", fuck);
-});
+//--------------------------------------------- СМЕНА ДЕКОРА КАЛЕНДАРЯ
 
 eventButtons.forEach(function (element) {
   element.addEventListener("click", () => {
@@ -156,6 +182,7 @@ eventButtons.forEach(function (element) {
     element.classList.add("active-button");
   });
 });
+//--------------------------------------------- СМЕНА КАРТИНОК
 
 pictureButtons.forEach(function (element) {
   element.addEventListener("click", () => {
@@ -164,6 +191,41 @@ pictureButtons.forEach(function (element) {
   });
 });
 
-document.querySelector("main").addEventListener("scroll", () => {
-  document.querySelector("body").classList.add("red");
+//----------------------------------------------- ВЫЗОВ МЕНЮ
+profileButton.addEventListener("click", function () {
+  windowSize = document.body.clientWidth;
+  if (windowSize >= 997) {
+    menuContainer.innerHTML = `
+    <div class="profile-menu__container ${themeClass}">
+     <a href="#" class="profile-menu__link ${themeClass2}">Profile</a>
+     <a href="#" class="profile-menu__link ${themeClass2}">Notifications</a>
+    </div>`;
+  } else {
+    menuContainer.innerHTML = `
+    <div class="profile-menu__container ${themeClass}">
+      <a href="#" class="profile-menu__link ${themeClass2}">Profile</a>
+      <a href="#" class="profile-menu__link ${themeClass2}">Notifications</a>
+      <button class="profile-menu__theme-button theme-button ${themeClass2}" id="menu-theme-btn">
+        ${themeText}
+      </button>
+    </div>`;
+  }
+  document.querySelector(".header__nav-bar").append(menuContainer);
+  document.getElementById("menu-theme-btn") != null
+    ? document
+        .getElementById("menu-theme-btn")
+        .addEventListener("click", themeFunc)
+    : null;
 });
+
+window.addEventListener("click", (e) => {
+  const box = document.querySelector(".profile-menu");
+  if (box != undefined) {
+    if (!box.contains(e.target) && !profileButton.contains(e.target)) {
+      box.remove();
+    }
+  }
+});
+
+//------------------------- ВЫЗОВ ФУНКЦИИ СМЕНЫ ТЕМЫ
+themeButton.addEventListener("click", themeFunc);
