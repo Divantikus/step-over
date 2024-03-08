@@ -368,13 +368,34 @@ h6 {
   font-weight: 500;
 }
 
+.left-side {
+  position: relative;
+}
 @media (max-width: 969px) {
   .left-side {
     display: none;
   }
 }
+.left-side nav {
+  position: sticky;
+  left: 0;
+  top: 0;
+}
 .left-side__menu {
-  margin: 0 0 215px 0;
+  padding: 35px 0 0 100px;
+  margin: -35px 0 0 -100px;
+  overflow-y: scroll;
+}
+.left-side__menu::-webkit-scrollbar {
+  display: none;
+}
+.left-side__menu > *:nth-child(9) {
+  margin: 215px 0 0 0;
+}
+@media (max-height: 1000px) {
+  .left-side__menu {
+    height: calc(100vh - 170px);
+  }
 }
 .left-side__item {
   margin: 0 0 69px 0;

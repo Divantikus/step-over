@@ -1,10 +1,29 @@
 .left-side {
+  position: relative;
+
   @media (max-width: 969px) {
     display: none;
   }
 
+  nav {
+    position: sticky;
+    left: 0;
+    top: 0;
+  }
+
   &__menu {
-    margin: 0 0 215px 0;
+    padding: 35px 0 0 100px;
+    margin: -35px 0 0 -100px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & > *:nth-child(9) {
+      margin: 215px 0 0 0;
+    }
+    @media (max-height: 1000px) {
+      height: calc(100vh - 170px);
+    }
   }
 
   &__item {
