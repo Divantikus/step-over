@@ -14,7 +14,8 @@ const buttons = document.querySelectorAll(".left-side__button"),
   themeButton = document.querySelector(".theme-button"),
   allButtons = document.querySelectorAll("button"),
   allSpan = document.querySelectorAll("span"),
-  body = document.querySelector("body");
+  body = document.querySelector("body"),
+  scrollWrap = document.querySelector(".world__scroll-wrapper");
 
 let windowSize = document.documentElement.clientWidth,
   otherLinks = document.querySelectorAll(".travel__link"),
@@ -26,6 +27,14 @@ let windowSize = document.documentElement.clientWidth,
   menuFlag = false,
   themeFlag = false,
   profileFlag = "on";
+document.addEventListener("DOMContentLoaded", (item) => {
+  let theme = JSON.parse(localStorage.getItem("theme"))?.dark;
+  console.log(theme);
+  if (theme) {
+    themeFunc();
+    // localStorage.setItem("theme", JSON.stringify({dark: false}))
+  }
+});
 //---------------------------------------- check
 menuContainer = document.createElement("div");
 menuContainer.className = "profile-menu";
@@ -142,6 +151,7 @@ function themeFunc() {
       element.classList.add("dark-them-color");
     });
     themeFlag = !themeFlag;
+    localStorage.setItem("theme", JSON.stringify({ dark: true }));
   } else {
     themeButton.style.background = "transparent";
     document.querySelector(".nav-bar__img").src = "img/general/sun.svg";
@@ -156,6 +166,7 @@ function themeFunc() {
       element.classList.remove("dark-them-color");
     });
     themeFlag = !themeFlag;
+    localStorage.setItem("theme", JSON.stringify({ dark: false }));
   }
   if (themeFlag) {
     themeText = "Light theme";
@@ -229,3 +240,24 @@ window.addEventListener("click", (e) => {
 
 //------------------------- ВЫЗОВ ФУНКЦИИ СМЕНЫ ТЕМЫ
 themeButton.addEventListener("click", themeFunc);
+
+//--------------------------СКРОЛЛ
+scrollWrap.addEventListener("wheel", (event) => {
+  // console.log(1);
+  event.preventDefault();
+  let delta = event.deltaY;
+  if (delta > 0) {
+    scrollWrap.scrollBy({
+      left: 130,
+      top: 0,
+      behavior: "smooth",
+    });
+  } else {
+    scrollWrap.scrollBy({
+      left: -130,
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+  console.log();
+});

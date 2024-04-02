@@ -431,6 +431,7 @@ h6 {
   max-width: 350px;
   display: flex;
   flex-wrap: nowrap;
+  overflow: scroll;
   margin: 0 0 37px 0;
 }
 .world__scroll-wrapper::-webkit-scrollbar {
